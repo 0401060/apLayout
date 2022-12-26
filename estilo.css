@@ -97,7 +97,29 @@ header{
 }
 
 @media screen and (max-width: 400px){
+    nav{
+        height: 100%;
+    }
     nav li{
         display: none;
     }
+}
+
+/*CSS do form*/
+.row:after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.label{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.input{
+    float: left;
+    width: 75%;
+    mrgin-top: 6px;
 }
