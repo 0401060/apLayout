@@ -71,10 +71,67 @@ function mascaraCNPJ(i){
 
 function validar(){
     var nome = formUser.nome.value;
-    
+    var email = formUser.email.value;
+    var fone = formUser.fone.value;
+    var endereco = formUser.end.value;
+    var CPF = formUser.CPF.value;
+    var CNPJ = formUser.CNPJ.value;
+    var senha = formUser.senha.value;
+    var confSenha = formUser.confSenha.value;
+
     if(nome == ""|| nome.length <=3){
         alert("Informe o nome completo!");
         formUser.nome.focus();
+        return false;
+    }
+
+    if(email == ""|| email.length <=10){
+        alert("Informe o e-mail correto!");
+        formUser.email.focus();
+        return false;
+    }
+
+    if(fone == ""|| fone.length <=15){
+        alert("Informe seu número de telefone!");
+        formUser.fone.focus();
+        return false;
+    }
+
+    if(endereco == ""|| endereco.length <=5){
+        alert("Informe o endereço completo!");
+        formUser.end.focus();
+        return false;
+    }
+
+    if(CPF == "" && CNPJ == ""){
+        alert("Selecione um documento!");
+        return false;
+    }
+
+    if(CPF != "" && CNPJ == ""){
+        if(CPF.length != 14){
+            alert("CPF incorreto!");
+            formUser.CPF.focus();
+            return false;
+        }
+    }
+
+    if(CNPJ != "" && CPF == ""){
+        if(CNPJ.length != 18){
+            alert("CNPJ incorreto!");
+            formUser.CNPJ.focus();
+            return false;
+        }
+    }
+
+    if (senha != ""|| senha.length < 8) { 
+        alert("Senha não atende aos requisitos!"); 
+        formUser.confSenha.focus(); 
+        return false;
+    }  
+    if (senha != confSenha) { 
+        alert("Senhas não conferem!"); 
+        formUser.senha.focus(); 
         return false;
     }
 }
