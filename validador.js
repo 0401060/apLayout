@@ -124,14 +124,14 @@ function validar(){
         }
     }
 
-    if (senha != ""|| senha.length < 8) { 
+    if (senha == ""|| senha.length < 8) { 
         alert("Senha não atende aos requisitos!"); 
-        formUser.confSenha.focus(); 
+        formUser.senha.focus(); 
         return false;
     }  
     if (senha != confSenha) { 
         alert("Senhas não conferem!"); 
-        formUser.senha.focus(); 
+        formUser.confSenha.focus(); 
         return false;
     }
 }
